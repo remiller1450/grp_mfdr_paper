@@ -1,0 +1,101 @@
+\documentclass[11pt]{article}
+
+\providecommand{\note}[1]{\textcolor{red}{#1}}
+
+\usepackage[left=0.5in,right=0.5in,bottom=0.75in,top=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\graphicspath{{fig/}}
+\usepackage[space]{grffile}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\usepackage{natbib}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+\hypersetup{colorlinks=true, citecolor=black, linkcolor=black, urlcolor=cyan}
+
+\renewcommand{\abstract}[1]{
+ \centerline{
+ \begin{minipage}{0.7\linewidth}
+ \hrule
+ \vskip 0.1in
+  \begin{center}
+    {\bf Abstract}
+  \end{center}
+  #1
+ \vskip 0.1in
+ \hrule
+ \end{minipage}}
+ \vskip 0.3in}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{prop}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{clry}{Corollary}
+\newtheorem*{conjecture}{Conjecture}
+\numberwithin{equation}{section}
+
+\renewcommand{\H}{\mathbf{H}}
+\providecommand{\I}{\mathbf{I}}
+\providecommand{\s}{\mathbf{s}}
+\renewcommand{\u}{\mathbf{u}}
+\providecommand{\rr}{\mathbf{r}}
+\providecommand{\z}{\mathbf{z}}
+\providecommand{\vv}{\mathbf{v}}
+\providecommand{\V}{\mathbf{V}}
+\providecommand{\W}{\mathbf{W}}
+\providecommand{\x}{\mathbf{x}}
+\providecommand{\X}{\mathbf{X}}
+\providecommand{\y}{\mathbf{y}}
+\providecommand{\bb}{\boldsymbol{\beta}}
+\providecommand{\bh}{\hat{\beta}}
+\providecommand{\bbh}{\hat{\boldsymbol{\beta}}}
+\providecommand{\be}{\boldsymbol{\eta}}
+\providecommand{\beh}{\hat{\boldsymbol{\eta}}}
+\providecommand{\bet}{\tilde{\boldsymbol{\eta}}}
+\providecommand{\bg}{\boldsymbol{\gamma}}
+\providecommand{\beps}{\boldsymbol{\epsilon}}
+\providecommand{\lam}{\lambda}
+\providecommand{\Pr}{\mathbb{P}}
+\providecommand{\cA}{\mathcal{A}}
+\providecommand{\cC}{\mathcal{C}}
+\providecommand{\cM}{\mathcal{M}}
+\providecommand{\cN}{\mathcal{N}}
+\providecommand{\cS}{\mathcal{S}}
+\providecommand{\FD}{\textrm{FD}}
+\providecommand{\mFDR}{\textrm{mFDR}}
+\providecommand{\zero}{\mathbf{0}}
+\providecommand{\abs}[1]{\left\lvert#1\right\rvert}
+\providecommand{\al}[2]{\begin{align}\label{#1}#2\end{align}}
+\providecommand{\as}[1]{\begin{align*}#1\end{align*}}
+\providecommand{\als}[2]{\begin{align}\label{#1}\begin{split}#2\end{split}\end{align}}
+\providecommand{\inP}{\overset{p}{\longrightarrow}}
+\providecommand{\inD}{\overset{d}{\longrightarrow}}
+\newcommand\independent{\protect\mathpalette{\protect\independenT}{\perp}}
+\def\independenT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+\providecommand{\cor}{\textrm{Cor}}
+\DeclareMathOperator{\Tr}{Tr}
+
+\title{Marginal False Discovery Rates for Group Lasso Regression}
+\author{Ryan Miller\\Department of Mathematics\\Xavier University
+  \and
+  Patrick Breheny\\Department of Biostatistics\\University of Iowa}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\abstract{Placeholder}
+
+\input{main}
+
+\bibliography{references}
+\bibliographystyle{ims}
+
+\end{document}
