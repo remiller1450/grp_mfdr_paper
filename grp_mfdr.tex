@@ -81,7 +81,7 @@
 \providecommand{\cor}{\textrm{Cor}}
 \DeclareMathOperator{\Tr}{Tr}
 
-\title{Marginal False Discovery Rates for Group Lasso Regression}
+\title{Marginal False Discovery Rates for Sparse Group Penalized Regression}
 \author{Ryan Miller\\Department of Mathematics\\Xavier University
   \and
   Patrick Breheny\\Department of Biostatistics\\University of Iowa}
@@ -91,7 +91,7 @@
 
 \maketitle
 
-\abstract{Placeholder}
+\abstract{Penalized regression methods, such as the lasso, have become an immensly popular modeling approach due to their ability simulataneously achieve variable selection and estimation.  However, the penalization used by the lasso and its variants can be unsatisfactory when the data contain categorical predictors or predictors likely to share a non-linear relationship with the outcome due to the way these variables must be represented using multiple columns in the design matrix prior to model fitting.  Grouped penalization regression methods, such as the group lasso, address these shortcoming by selecting entire groups of coefficients, thereby facilitating the indentification and interpretation of important variables in these settings.  This work develops marginal false discovery rate methods in the context of sparse group regression, with a particular focus on the group lasso, in order to help the analyst evaluate the reliability of group-wise selections within a model while limiting the number of false positive findings.  These methods are developed and presented for linear, logistic, and survival regression models subject to the group lasso or group MCP penalties.  We demonstrate via simulation study that these methods are capable of providing false discovery rate control while yielding more true positives than existing alternatives, and we illustrate their practical utility in an application involving non-linear additive modeling within a genetic association study involving the bronchial epitheliums of smokers and lung cancer diagnoses.}
 
 \input{main}
 
