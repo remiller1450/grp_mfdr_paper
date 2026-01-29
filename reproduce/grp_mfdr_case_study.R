@@ -12,7 +12,7 @@ library(snpStats)
 ## Case Study
 
 ## Pre-processing on spira data
-load("C:\\Users\\millerr33\\Documents\\GitHub\\grp_mfdr_paper\\reproduce\\data\\spira-geo.RData")
+load("~\\grp_mfdr_paper\\reproduce\\data\\spira-geo.RData")
 
 ys <- pData(geo[[1]])[,1]
 y <- as.numeric(regexpr('NOT', ys) == -1)

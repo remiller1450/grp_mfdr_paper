@@ -1,18 +1,18 @@
 ####################################################################################################
 #
 #                                                                                     
-#   Filename    :	grp_mfdr_reproduce.R										  
-#   Input data files  :    grp_fdr_sim_funs.R                                                        
-#   Output data files :    
+#   Filename    :	             grp_mfdr_reproduce.R										  
+#   Required input files  :    grp_fdr_sim_funs.R                                                        
+#   Output files :             Fig_1.png, Fig_2.png, Fig_3.png, Fig_4.png, Table_1.png
 #
-#   Required R packages :  grpreg, ncvreg, Matrix, covTest, selectiveInference, ggplot2,
+#   Required R packages :  devtools, grpreg, ncvreg, Matrix, covTest, selectiveInference, ggplot2,
 #                          Rccp, gridExtra, locfdr, grid, reshape2, hdi, knockoff
 #
 #
 ####################################################################################################
 
 library(devtools)
-#install_github("remiller1450/grpreg")
+#install_github("remiller1450/grpreg")  ## Must use this modified version of grpreg
 library(grpreg)
 library(Matrix)
 library(splines)
@@ -35,12 +35,12 @@ source("grp_fdr_sim_funs.R")
 ##################################################
 
 ## Create and Export Fig 1
-png("Fig1.png", h=3.3, w=8, units = 'in', res = 300)
+png("Fig_1.png", h=3.3, w=8, units = 'in', res = 300)
   make_plot1(reps = 100)
 dev.off()
 
 ## Create and Export Fig 2
-png("Fig2.png", h=3.3, w=8, units = 'in', res = 300)
+png("Fig_2.png", h=3.3, w=8, units = 'in', res = 300)
    make_plot2(reps = 100)
 dev.off()
 
@@ -52,7 +52,7 @@ dev.off()
 
 
 ## Create and Export Fig 3
-png("Fig3.png", h=3.3, w=7, units = 'in', res = 300)
+png("Fig_3.png", h=3.3, w=7, units = 'in', res = 300)
    make_plot3(reps = 500)
 dev.off()
 
@@ -63,7 +63,7 @@ dev.off()
 ###
 ##################################################
 
-png("Fig4.png", h=3.5, w=8, units = 'in', res = 300)
+png("Fig_4.png", h=3.5, w=8, units = 'in', res = 300)
    make_plot4(reps = 50)
 dev.off()
 
@@ -74,20 +74,9 @@ dev.off()
 ##################################################
 
 
-png("Table1.png", h=15, w=15, units = 'in', res = 300)
+png("Table_1.png", h=15, w=15, units = 'in', res = 300)
    make_table1(reps = 100)
 dev.off()
 
    
-##################################################
-### 
-###     Fig 5 (Case Study Results)
-###
-##################################################
-
-
-##################################################
-###
-###     Table 2 (Case Study Results)
-###
-###################################################
+### NOTE: CASE STUDY RESULTS ARE RECREATED VIA THE FILE grp_mfdr_case_study.R
