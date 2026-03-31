@@ -8,6 +8,7 @@ library(GEOquery)
 library(splines)
 library(grpreg)
 library(snpStats)
+library(ncvreg)
 
 ## Case Study
 
@@ -19,6 +20,7 @@ y <- as.numeric(regexpr('NOT', ys) == -1)
 X2 <- t(exprs(geo[[1]]))  
 rawX <- apply(X2, 2, as.numeric)  ## Make gene expressions numeric
 
+X <- NULL
 for(i in 1:ncol(rawX)){
   X <- cbind(X, bs(rawX[,i]))
 }
@@ -83,7 +85,7 @@ adj_pvg[which.min(abs(adj_pvg - 0.1))]
 ## Results Plot
 
 ## Create and Export Fig 3
-png("Fig3.png", h= 3.5, w=8, units = 'in', res = 300)
+png("Fig_Case.png", h= 4, w=7.5, units = 'in', res = 300)
 
 layout(matrix(c(1,2,3,3), ncol=2, byrow=TRUE), heights=c(4, 0.6))
 

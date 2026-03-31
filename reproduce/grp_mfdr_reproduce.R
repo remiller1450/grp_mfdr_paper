@@ -6,7 +6,7 @@
 #   Output files :             Fig_1.png, Fig_2.png, Fig_3.png, Fig_4.png, Table_1.png
 #
 #   Required R packages :  devtools, grpreg, ncvreg, Matrix, covTest, selectiveInference, ggplot2,
-#                          Rccp, gridExtra, locfdr, grid, reshape2, hdi, knockoff
+#                          Rccp, gridExtra, locfdr, grid, reshape2, hdi, knockoff, DescTools
 #
 #
 ####################################################################################################
@@ -21,6 +21,8 @@ library(knockoff)
 library(selectiveInference)
 library(gridExtra)
 library(tidyr)
+library(DescTools)
+library(ggplot2)
 
 ## Sets the working directory to current location of this folder
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
@@ -30,19 +32,23 @@ source("grp_fdr_sim_funs.R")
 
 ##################################################
 ### 
-###   Fig 1 and 2 (Expected False Discovery Curves)
+###   Fig 1 (false discovery curves)
 ###
 ##################################################
 
-## Create and Export Fig 1
-png("Fig_1.png", h=3.3, w=8, units = 'in', res = 300)
-  make_plot1(reps = 100)
-dev.off()
 
-## Create and Export Fig 2
-png("Fig_2.png", h=3.3, w=8, units = 'in', res = 300)
-   make_plot2(reps = 100)
-dev.off()
+fig1 = create_fig1()
+ggsave("Fig1.png", fig1, width = 7, height = 7, units = "in", dpi = 300)
+
+##################################################
+### 
+###   Fig 2 (mFDR accuracy by sample size)
+###
+##################################################
+
+fig2 = create_fig2(reps = 100)
+ggsave("Fig2.png", fig2, width = 7, height = 3.5, units = "in", dpi = 300)
+
 
 ##################################################
 ### 
@@ -51,10 +57,8 @@ dev.off()
 ##################################################
 
 
-## Create and Export Fig 3
-png("Fig_3.png", h=3.3, w=7, units = 'in', res = 300)
-   make_plot3(reps = 500)
-dev.off()
+fig3 = create_fig3(reps = 200)
+ggsave("Fig3.png", fig3, width = 7, height = 3.5, units = "in", dpi = 300)
 
 
 ##################################################
@@ -63,9 +67,9 @@ dev.off()
 ###
 ##################################################
 
-png("Fig_4.png", h=3.5, w=8, units = 'in', res = 300)
-   make_plot4(reps = 50)
-dev.off()
+fig4 = make_plot4(reps = 50)
+ggsave("Fig4.png", fig4, width = 7, height = 3.5, units = "in", dpi = 300)
+
 
 ##################################################
 ###
